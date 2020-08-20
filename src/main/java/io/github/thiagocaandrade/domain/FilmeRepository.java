@@ -1,17 +1,18 @@
 package io.github.thiagocaandrade.domain;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
-public interface FilmeRepository extends CrudRepository<Filme, Long> {
+public interface FilmeRepository extends JpaRepository<Filme, Long> {
 
 
     Optional<Filme> findById(Long id);
 
-    Iterable<Filme> findByTipo(String tipo);
+    List<Filme> findByTipo(String tipo);
 
-    Iterable<Filme> findByAvaliacao(String avaliacao);
+    List<Filme> findByAvaliacao(String avaliacao);
 
 }
